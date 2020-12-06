@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
 
-var bodyParser = require("bodyParser")
+var bodyParser = require("body-parser")
   .use(bodyParser.json())  //soporte para codificar json
   .use(bodyParser.urlencoded({ extended: true}))  //soporte para codificar las url
 
@@ -17,7 +17,7 @@ express()
   //POST
   //https://desolate-harbor-16746.herokuapp.com/token-device
   //token
-  .post('/token-device', (req, res) => res.send(request.body.token))
+  .post("/token-device", (req, res) => res.send(request.body.token))
 
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
